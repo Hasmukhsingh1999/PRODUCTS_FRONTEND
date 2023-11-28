@@ -1,10 +1,11 @@
+import Searchbar from "@/components/Searchbar";
 import Image from "next/image";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <section className="px-6 border-2 border-red-500 md:px-20 py-24">
+      <section className="px-6 border-2  md:px-20 py-24">
         <div className="flex flex-col justify-center">
           <p className="small-text">
             Smart Shopping Starts Here:
@@ -23,9 +24,9 @@ const page = () => {
             Powerfull,self-serve product and growth analytics to help you
             convert,engage,and retain more.
           </p>
-          SearchBar
+          <Searchbar/>
         </div>
-        HeroCarousel
+        {/* HeroCarousel */}
       </section>
       <section className="trending-section">
         <h2 className="section-text">Trending</h2>
