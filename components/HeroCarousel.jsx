@@ -14,24 +14,27 @@ const heroImages = [
 
 const HeroCarousel = () => {
   return (
-    <Carousel
-      showThumbs={false}
-      autoPlay
-      infiniteLoop
-      interval={2000}
-      showArrows={false}
-      showStatus={false}
-    >
-      {heroImages.map((image) => (
-        <Image
-          src={image.imgUrl}
-          alt={image.alt}
-          width={484}
-          height={484}
-          key={image.alt}
-        />
-      ))}
-    </Carousel>
+    <div>
+      <Carousel
+        showThumbs={false}
+        autoPlay
+        infiniteLoop
+        interval={2000}
+        showArrows={false}
+        showStatus={false}
+      >
+        {heroImages.map((image) => (
+          <Image
+            src={image.imgUrl}
+            alt={image.alt}
+            width={484}
+            height={484}
+            key={image.alt}
+          />
+        ))}
+      </Carousel>
+      <Image src={"assets/icons/hand-drawn-arrow.svg"} />
+    </div>
   );
 };
 
