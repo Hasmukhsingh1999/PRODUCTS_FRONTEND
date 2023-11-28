@@ -1,3 +1,4 @@
+import HeroCarousel from "@/components/HeroCarousel";
 import Searchbar from "@/components/Searchbar";
 import Image from "next/image";
 import React from "react";
@@ -27,6 +28,7 @@ const page = () => {
           <Searchbar/>
         </div>
         {/* HeroCarousel */}
+        <HeroCarousel/>
       </section>
       <section className="trending-section">
         <h2 className="section-text">Trending</h2>
