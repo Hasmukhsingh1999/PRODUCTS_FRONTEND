@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const isValidAmazonProductUrl = (url) => {
   try {
     const parseURL = new URL(url);
@@ -11,13 +12,13 @@ const isValidAmazonProductUrl = (url) => {
       hostname.includes("amazon.") ||
       hostname.endsWith("amazon")
     ) {
-        return true;
+      return true;
     }
   } catch (error) {
-    console.log(error)
+    console.error(error);
+    return false;
   }
-  return false
-
+  return false;
 };
 
 const Searchbar = () => {
@@ -25,14 +26,15 @@ const Searchbar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const isValidLink = isValidAmazonProductUrl(searchPrompt);
-    // setSearchPrompt(isValidLink);
-    if(!isValidLink){
-        return toast.error('Please provide a vid')
+    setSearchPrompt(isValidLink ? searchPrompt : "");
+    if (!isValidLink) {
+      return toast.error("Please provide a valid Amazon product link");
     }
   };
+
   return (
     <form className="flex flex-wrap gap-4 mt-12" onSubmit={handleSubmit}>
-         <ToastContainer />
+      <ToastContainer />
       <input
         type="text"
         placeholder="Enter product link"
